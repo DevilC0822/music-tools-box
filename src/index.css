@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'icomoon-num-1';
+  src: url('./assets/font/icomoon-num-1/icomoon.woff2') format('woff2'),
+      url('./assets/font/icomoon-num-1/icomoon.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'icomoon-num-2';
+  src: url('./assets/font/icomoon-num-2/icomoon.woff2') format('woff2'),
+      url('./assets/font/icomoon-num-2/icomoon.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.num-font-rule-1 {
+  font-family: 'icomoon-num-1', sans-serif;
+}
+.num-font-rule-2 {
+  font-family: 'icomoon-num-2', sans-serif;
+}
+
+
+* {
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: #f9f9f9;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
