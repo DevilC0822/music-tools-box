@@ -10,8 +10,8 @@ const Profile = lazy(() => import('@/pages/profile/index.jsx'));
 const NotFound = lazy(() => import('@/components/NotFound/index.jsx'));
 
 // ToolBox
-const SignleImportSinger = lazy(() => import('@/pages/toolbox/SignleImport/singer/index.jsx'));
-const SingleImportSong = lazy(() => import('@/pages/toolbox/SignleImport/song/index.jsx'));
+const SignleImportSinger = lazy(() => import('@/pages/toolbox/signleImport/singer/index.jsx'));
+const SingleImportSong = lazy(() => import('@/pages/toolbox/signleImport/song/index.jsx'));
 
 const routes = [
   {
