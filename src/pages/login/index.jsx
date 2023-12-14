@@ -177,6 +177,12 @@ function Login() {
     };
   }, []);
 
+  useEffect(() => {
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
   return <div className={styles.LoginBg}>
     <div className="card w-full glass">
       <div className="card-body p-6">

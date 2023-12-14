@@ -44,7 +44,23 @@ const decryptNumRule2 = (num) => {
   return result.join('');
 };
 
+export const cacheToken = (token, categoryName) => {
+  // 将token缓存到localStorage
+  const cacheTokenList = JSON.parse(window.localStorage.getItem('tokenList') || '[]');
+  const cacheIndex = cacheTokenList.findIndex((item) => item.name === categoryName);
+  if (cacheIndex > -1) {
+    cacheTokenList[cacheIndex].token = token;
+  } else {
+    cacheTokenList.push({
+      name: categoryName,
+      token,
+    });
+  }
+  window.localStorage.setItem('tokenList', JSON.stringify(cacheTokenList));
+};
+
 export default {
   decryptNumRule1,
   decryptNumRule2,
+  cacheToken,
 };

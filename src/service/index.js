@@ -1,4 +1,5 @@
 import axios from 'axios';
+import useToast from '@/hooks/useToast';
 
 class Service {
   instance;
@@ -38,10 +39,17 @@ class Service {
         // config.headers['Content-Disposition'] = 'attachment';
         // config.headers['Content-Type'] = 'audio/mp3';
       }
+      if (type === 'check') {
+        // 
+      }
       return config;
     });
     this.instance.interceptors.response.use((response) => {
       return response?.data;
+    }, (error) => {
+      const { openToast } = useToast();
+      openToast(error?.message || '服务器异常', 'error');
+      return Promise.reject(error);
     });
   }
   get(url, params) {
@@ -62,7 +70,13 @@ const musicAdminService = new Service({
   type: 'admin',
 });
 
+const checkService = new Service({
+  baseUrl: import.meta.env.VITE_CHECK_AXIOS_BASE_URL,
+  type: 'check',
+});
+
 export {
   musicService,
   musicAdminService,
+  checkService,
 };

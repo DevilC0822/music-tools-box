@@ -41,6 +41,7 @@ function Home() {
         </div>;
       })
     } */}
+    {/* <p className='num-font-rule-1'>&#x31;</p> */}
   </>;
 }
 

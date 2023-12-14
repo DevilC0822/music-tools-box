@@ -10,8 +10,11 @@ const Profile = lazy(() => import('@/pages/profile/index.jsx'));
 const NotFound = lazy(() => import('@/components/NotFound/index.jsx'));
 
 // ToolBox
-const SignleImportSinger = lazy(() => import('@/pages/toolbox/signleImport/singer/index.jsx'));
-const SingleImportSong = lazy(() => import('@/pages/toolbox/signleImport/song/index.jsx'));
+const SignleImportSinger = lazy(() => import('@/pages/toolbox/SignleImport/Singer/index.jsx'));
+const SingleImportSong = lazy(() => import('@/pages/toolbox/SignleImport/Song/index.jsx'));
+// check
+const AliCloudPan = lazy(() => import('@/pages/toolbox/Check/AliCloudPan/index.jsx'));
+const Mihoyo = lazy(() => import('@/pages/toolbox/Check/Mihoyo/index.jsx'));
 
 const routes = [
   {
@@ -49,6 +52,14 @@ const routes = [
       {
         path: 'signle-import/song',
         element: <Suspense><SingleImportSong /></Suspense>,
+      },
+      {
+        path: 'check/ali-cloud-pan',
+        element: <Suspense><AliCloudPan /></Suspense>,
+      },
+      {
+        path: 'check/mihoyo',
+        element: <Suspense><Mihoyo /></Suspense>,
       },
       {
         path: '*',

@@ -14,14 +14,18 @@ function Singer() {
   const [dataSources, setDataSources] = useState([]);
 
   const getDataSources = async () => {
-    openLoading();
-    const { limit, offset } = pageInfo;
-    const res = await musicAdminService.get(`/singer?limit=${limit}&offset=${offset}`);
-    closeLoading();
-    setDataSources((pre) => {
-      return [...pre, ...res.data.list];
-    });
-    pageInfo.offset += pageInfo.limit;
+    try{
+      openLoading();
+      const { limit, offset } = pageInfo;
+      const res = await musicAdminService.get(`/singer?limit=${limit}&offset=${offset}`);
+      closeLoading();
+      setDataSources((pre) => {
+        return [...pre, ...res.data.list];
+      });
+      pageInfo.offset += pageInfo.limit;
+    } catch {
+      closeLoading();
+    }
   };
 
   const onClickName = (id) => {

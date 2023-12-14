@@ -48,17 +48,17 @@ export default function MainLayout() {
   }, [location]);
 
   useEffect(() => {
-    openLoading();
-    musicService.post('/login/status').then((res) => {
-      console.log(res);
-      if (res?.data.profile) {
-        userInfoStore.setStorage('profile', res?.data.profile);
-        return;
-      }
-      userInfoStore.removeStorage('profile');
-    }).finally(() => {
-      closeLoading();
-    });
+    // openLoading();
+    // musicService.post('/login/status').then((res) => {
+    //   // console.log(res);
+    //   if (res?.data.profile) {
+    //     userInfoStore.setStorage('profile', res?.data.profile);
+    //     return;
+    //   }
+    //   userInfoStore.removeStorage('profile');
+    // }).finally(() => {
+    //   closeLoading();
+    // });
   }, []);
 
   return <>

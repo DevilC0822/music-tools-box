@@ -131,7 +131,7 @@ function Profile() {
         cloudCount: res[4].value.count,
       });
     }).finally(() => {
-      setIsLogin(true);
+      setIsLogin(false);
       closeLoading();
     });
   };
@@ -159,7 +159,7 @@ function Profile() {
     const _profile = userInfoStore.getStorage('profile');
     if (_profile) {
       getUserDetails(_profile?.userId);
-      setIsLogin(true);
+      setIsLogin(false);
     }
   }, []);
 

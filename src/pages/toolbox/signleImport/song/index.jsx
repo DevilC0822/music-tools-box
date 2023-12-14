@@ -77,6 +77,7 @@ function Song() {
     pageInfo.offset += pageInfo.limit;
     if (res.data.hasMore === false) {
       openToast('没有更多了', 'warning');
+      // eslint-disable-next-line no-use-before-define
       window.removeEventListener('scroll', onScroll);
     }
   };

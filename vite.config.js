@@ -15,11 +15,17 @@ export default defineConfig({
   },
   server: {
     port: 5173,
+    host: '0.0.0.0',
     proxy: {
       '/admin/api': {
         target: 'http://localhost:3000',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/admin\/api/, '/api'),
+      },
+      '/check/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/check\/api/, '/api'),
       },
       '/music/api': {
         target: 'http://175.24.198.84:3000',
