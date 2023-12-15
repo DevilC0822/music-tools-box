@@ -18,12 +18,12 @@ export default defineConfig({
     host: '0.0.0.0',
     proxy: {
       '/admin/api': {
-        target: 'http://localhost:3000',
+        target: 'http://localhost:3001',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/admin\/api/, '/api'),
       },
       '/check/api': {
-        target: 'http://localhost:3000',
+        target: 'http://localhost:3001',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/check\/api/, '/api'),
       },

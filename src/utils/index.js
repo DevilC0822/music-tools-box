@@ -44,7 +44,10 @@ const decryptNumRule2 = (num) => {
   return result.join('');
 };
 
-export const cacheToken = (token, categoryName) => {
+export const cacheToken = (token, categoryName, sendKey) => {
+  if (sendKey) {
+    window.localStorage.setItem('sendKey', JSON.stringify(sendKey));
+  }
   // 将token缓存到localStorage
   const cacheTokenList = JSON.parse(window.localStorage.getItem('tokenList') || '[]');
   const cacheIndex = cacheTokenList.findIndex((item) => item.name === categoryName);

@@ -30,7 +30,7 @@ function AliCloudPan() {
       }
       openToast(`签到成功, ${res?.data?.notice}`, 'success');
     }).finally(() => {
-      cacheToken(tokenInputRef.current.value, CHECK_CATEGORY);
+      cacheToken(tokenInputRef.current.value, CHECK_CATEGORY, sendKeyInputRef.current.value);
       closeLoading();
     });
   };
